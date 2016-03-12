@@ -1,0 +1,17 @@
+<h1>Hello, Cars!</h1>
+
+ <%= form_for :cars, url: cars_path do |f| %>
+   <p>
+     <%= f.label :marca %><br>
+     <%= f.text_field :marca %>
+   </p>
+
+      <p>
+        <%= f.label :modelo %><br>
+        <%= f.text_field :modelo %>
+      </p>
+
+   <p>
+     <%= f.submit %>
+   </p>
+ <% end %>
