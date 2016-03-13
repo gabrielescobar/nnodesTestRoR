@@ -2,10 +2,16 @@ class CarsController < ApplicationController
 
 def index
     @car = Car.all
+
   end
 
     def show
       @car = Car.find(params[:id])
+      @hash = Gmaps4rails.build_markers(@car) do |car, marker|
+        marker.lat car.lat
+        marker.lng car.long
+        marker.infowindow car.marca + "-" + car.modelo
+      end
     end
 
   def new
