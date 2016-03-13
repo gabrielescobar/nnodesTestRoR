@@ -1,4 +1,7 @@
 class Car < ActiveRecord::Base
+
+    has_many :piezas, dependent: :destroy
+
     validates :marca, presence: true
     validates :modelo, presence: true
 

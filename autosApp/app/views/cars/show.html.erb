@@ -17,5 +17,14 @@
   <strong>Longitud:</strong>
   <%= @car.long %>
 </p>
+
+
+<h2>Piezas</h2>
+<%= render @car.piezas %>
+
+
+<h2>Agregar Pieza:</h2>
+<%= render 'piezas/form' %>
+
 <%= link_to 'Editar', edit_car_path(@car) %> |
 <%= link_to 'Volver', cars_path %>
