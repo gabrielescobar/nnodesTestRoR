@@ -1,43 +1,41 @@
-<h1>Editar Carro</h1>
+ <h1>Editar Carro</h1>
 
+  <%= form_for :car, :html => {:class => "formBorder"}, url: car_path(@car), method: :PATCH do |f|%>
+ <% if @car.errors.any? %>
+      <div id="error_explanation">
+          <% @car.errors.full_messages.each do |msg| %>
+          <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Error!</strong> <%= msg %>.
+          </div>
 
+          <% end %>
 
- <%= form_for :car, url: car_path(@car), method: :PATCH do |f| %>
-<% if @car.errors.any? %>
-     <div id="error_explanation">
-       <h2>
-         <%= pluralize(@car.errors.count, "error") %> No se pudo guardar el carro:
-       </h2>
-       <ul>
-         <% @car.errors.full_messages.each do |msg| %>
-           <li><%= msg %></li>
-         <% end %>
-       </ul>
-     </div>
-   <% end %>
-   <p>
-     <%= f.label :marca %><br>
-     <%= f.text_field :marca %>
-   </p>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :marca%></br>
+      <%= f.text_field :marca, :class => 'form-control' %>
+    </div>
 
-      <p>
-        <%= f.label :modelo %><br>
-        <%= f.text_field :modelo %>
-      </p>
+    <div class="form-group">
+         <%= f.label :modelo %></br>
+         <%= f.text_field :modelo, :class => 'form-control' %>
+    </div>
 
- <p>
-        <%= f.label :latitud %><br>
-        <%= f.text_field :lat %>
-      </p>
+    <div class="form-group">
+             <%= f.label :latitud %></br>
+             <%= f.text_field :lat, :class => 'form-control' %>
+        </div>
 
-       <p>
-              <%= f.label :longitud %><br>
-              <%= f.text_field :long %>
-            </p>
+        <div class="form-group">
+                 <%= f.label :longitud %></br>
+                 <%= f.text_field :long, :class => 'form-control' %>
+            </div>
 
-   <p>
-     <%= f.submit  "Guardar Cambios"%>
-   </p>
- <% end %>
-
- <%= link_to 'Volver', cars_path %>
+    <p>
+      <%= f.submit  'Guardar Cambios', :class => 'btn btn-success' %>
+    </p>
+  <% end %>
+ </br>
+  <%= link_to 'Volver', cars_path %>

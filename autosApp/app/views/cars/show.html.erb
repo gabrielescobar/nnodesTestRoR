@@ -1,30 +1,29 @@
 
+<div class="row borderInfoCar">
+  <div class="col-xs-6" style="padding: 5%;">
+   <p>
+     <h2>Marca: <small> <%= @car.marca %></small></h2>
+   </p>
 
+   <p>
+       <h2>Modelo: <small> <%= @car.modelo %></small></h2>
+   </p>
 
-<p>
-  <strong>Marca:</strong>
-  <%= @car.marca %>
-</p>
+   <p>
+      <h2>Latitud: <small> <%= @car.lat %></small></h2>
+   </p>
 
-<p>
-  <strong>Modelo:</strong>
-  <%= @car.modelo %>
-</p>
-
-<p>
-  <strong>Latitud:</strong>
-  <%= @car.lat %>
-</p>
-
-<p>
-  <strong>Longitud:</strong>
-  <%= @car.long %>
-</p>
-
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+   <p>
+      <h2>Longitud: <small> <%= @car.long %></small></h2>
+   </p>
+  </div>
+  <div class="col-xs-6">
+   <div id="map" style='width: 100%; height: 300px;'></div>
+  </div>
 </div>
+
+
+
 
 <script>
 handler = Gmaps.build('Google');
@@ -35,12 +34,20 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 });
 </script>
 
+<div class="borderInfoCar">
 <h2>Piezas</h2>
+<table class="table table-bordered">
+  <tr>
+    <th>Nombre</th>
+    <th>Cantidad</th>
+    <th colspan="2">Opciones</th>
+  </tr>
 <%= render @car.piezas %>
-
-
+</table>
+</div>
+<div class="borderInfoCar">
 <h2>Agregar Pieza:</h2>
 <%= render 'piezas/form' %>
-
-<%= link_to 'Editar', edit_car_path(@car) %> |
+</div>
+<%= link_to 'Editar Carro', edit_car_path(@car) %> |
 <%= link_to 'Volver', cars_path %>

@@ -19,3 +19,8 @@
     border-radius: 8px;
     padding: 2%;
 }
+
+.borderInfoCar{
+    padding-bottom: 9px;
+    border-bottom: 1px solid #eee;
+}

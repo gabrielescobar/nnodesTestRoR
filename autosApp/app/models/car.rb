@@ -4,6 +4,8 @@ class Car < ActiveRecord::Base
 
     validates :marca, presence: true
     validates :modelo, presence: true
+    validates_numericality_of :lat, :greater_than_or_equal_to => -85.00, :less_than_or_equal_to => 85.00, :message => "debe estar en un rango entre -85 a 85"
+    validates_numericality_of :long, :greater_than_or_equal_to => -180.00, :less_than_or_equal_to => 180.00, :message => "debe estar en un rango entre -180 a 180"
 
     after_initialize :init
        def init
