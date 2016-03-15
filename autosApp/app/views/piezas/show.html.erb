@@ -1,18 +1,19 @@
 
 <div class="row borderInfoCar">
   <div class="col-xs-6" style="padding: 5%;">
-   <p>
-     <h2>Nombre: <small> <%= @pieza.nombre %></small></h2>
-   </p>
+    <p>
+    <h2>Nombre: <small> <%= @pieza.nombre %></small></h2>
+    </p>
 
-   <p>
-       <h2>Cantidad: <small> <%= @pieza.cantidad %></small></h2>
-   </p>
+    <p>
+    <h2>Cantidad: <small> <%= @pieza.cantidad %></small></h2>
+    </p>
 
   </div>
   <div class="col-xs-6" style="padding: 5%;">
-<%= link_to 'Editar Pieza', edit_car_path(@car) %> |
-<%= link_to 'Volver', cars_path %>
+    <%= link_to 'Editar Pieza', edit_car_path(@car) %> |
+    <%= link_to 'Volver', cars_path %>
+  </div>
 </div>
 
 

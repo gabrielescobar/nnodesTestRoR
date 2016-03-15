@@ -1,9 +1,9 @@
 
 <tr>
-      <td><%= pieza.nombre %></td>
-      <td><%= pieza.cantidad %></td>
-      <td><%= link_to 'Editar',edit_car_pieza_path(pieza.car, pieza)%></td>
-      <td> <%= link_to 'Eliminar', [pieza.car, pieza],
-                         method: :delete,
-                         data: { confirm: 'Seguro que deseas eliminar la pieza?' } %></td>
-    </tr>
+  <td><%= pieza.nombre %></td>
+  <td><%= pieza.cantidad %></td>
+  <td><%= link_to 'Editar',edit_car_pieza_path(pieza.car, pieza)%></td>
+  <td> <%= link_to 'Eliminar', [pieza.car, pieza],
+                   method: :delete,
+                   data: { confirm: 'Seguro que deseas eliminar la pieza?' } %></td>
+</tr>

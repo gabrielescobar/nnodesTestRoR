@@ -1,7 +1,5 @@
 
-
 <h1>Lista de Carros</h1>
-
 
 <%= link_to 'Nuevo Carro', new_car_path %>
 
@@ -15,16 +13,16 @@
   </tr>
 
   <% @car.each do |car| %>
-    <tr>
-      <td><%= car.marca %></td>
-      <td><%= car.modelo %></td>
-      <td><%= car.lat %></td>
-      <td><%= car.long %></td>
-      <td><%= link_to 'Mostrar', car_path(car) %></td>
-      <td><%= link_to 'Editar', edit_car_path(car) %></td>
-      <td><%= link_to 'Eliminar', car_path(car),
-                    method: :delete,
-                    data: { confirm: 'Seguro que deseas eliminar el carro?' } %></td>
-    </tr>
+      <tr>
+        <td><%= car.marca %></td>
+        <td><%= car.modelo %></td>
+        <td><%= car.lat %></td>
+        <td><%= car.long %></td>
+        <td><%= link_to 'Mostrar', car_path(car) %></td>
+        <td><%= link_to 'Editar', edit_car_path(car) %></td>
+        <td><%= link_to 'Eliminar', car_path(car),
+                        method: :delete,
+                        data: { confirm: 'Seguro que deseas eliminar el carro?' } %></td>
+      </tr>
   <% end %>
 </table>
